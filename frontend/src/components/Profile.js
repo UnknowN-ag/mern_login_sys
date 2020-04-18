@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import jwt_decode from 'jwt-decode';
 
 class Profile extends React.Component {
     constructor() {
@@ -10,7 +11,7 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
-        const token = localStorage.usertoken;
+        const token = localStorage.token;
         const decoded = jwt_decode(token);
         this.setState({
             name: decoded.name,

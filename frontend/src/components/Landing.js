@@ -6,10 +6,12 @@ class Landing extends Component{
             <div className="container mt-5">
                 <div className="jumbotron">
                     <div className="col-sm-8 mx-auto">
-                        Welcome
+                        <h1 className="text-center">Welcome</h1>
                     </div>
                 </div>
             </div>
         )
     }
 }
+
+export default Landing;

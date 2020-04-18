@@ -29,7 +29,7 @@ exports.create = (req, res) => {
 }
 
 exports.login = (req, res)=>{
-    
+    console.log(req.body.email);
     if(req.body.email && req.body.password){
         var userEmail = {
             email: req.body.email

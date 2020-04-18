@@ -10,7 +10,7 @@ class Navbar extends Component {
     }
     render(){
         const loginRegLink = (
-            <ul classNameName="navbar-nav">
+            <ul className="navbar-nav">
                 <li className="nav-item">
                     <Link to="/login" className="nav-link">Login</Link>
                 </li>
@@ -30,15 +30,15 @@ class Navbar extends Component {
             </ul>
         )
         return (
-            <nav className="navbar navbar-expand-lg navbar-dark">
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1">
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
-                <div classNameName="collapse navbar-collapse" id="navbar1">
-                    <ul classNameName="navbar-nav">
-                        <li classNameName="navbar-item">
-                            <Link to="/" classNameName="navbar-link">Home</Link>
+                <div className="collapse navbar-collapse text-center" id="navbar1">
+                    <ul className="navbar-nav">
+                        <li className="nav-item">
+                            <Link to="/" className="nav-link">Home</Link>
                         </li>
                     </ul>
                     {localStorage.usertoken ? userLink : loginRegLink}
