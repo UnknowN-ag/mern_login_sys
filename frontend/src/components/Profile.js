@@ -11,17 +11,31 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
-        const token = localStorage.token;
-        const decoded = jwt_decode(token);
-        this.setState({
-            name: decoded.name,
-            email: decoded.email
-        })
+        if(localStorage.token){
+            const token = localStorage.token;
+            const decoded = jwt_decode(token);
+            this.setState({
+                name: decoded.name,
+                email: decoded.email
+            })
+        }
+        
     }
 
     render(){
-        return (
-            <div className="container">
+
+        const welDiv = (
+            <div className="container mt-5">
+                <div className="jumbotron">
+                    <div className="col-sm-8 mx-auto">
+                        <h1 className="text-center">Welcome</h1>
+                    </div>
+                </div>
+            </div>
+        )
+
+        const profileDiv = (
+            <div className="container mt-5">
                 <div className="jumbotron">
                     <div className="col-sm-8 mx-auto">
                          <h1 className="text-center">Profile</h1>
@@ -40,6 +54,12 @@ class Profile extends React.Component {
                     </table>
                 </div>
             </div>
+        )
+
+        return (
+            <div>
+                {localStorage.token ? profileDiv : welDiv}
+            </div>            
         )
     }
 

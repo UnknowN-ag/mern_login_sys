@@ -29,11 +29,7 @@ exports.create = (req, res) => {
 }
 
 exports.login = (req, res)=>{
-    console.log(req.body.email);
     if(req.body.email && req.body.password){
-        var userEmail = {
-            email: req.body.email
-        }
         User.findOne({email:req.body.email}).then(user => {
             if(!user){
                 return res.status(404).send({

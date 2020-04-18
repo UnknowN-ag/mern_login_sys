@@ -17,8 +17,8 @@ export const login = (loginUser) => {
     console.log(loginUser.email)
 
     return axios.post('/userfetch', {
-        email: 'ag@gmail.com',
-        password: 'password'
+        email: loginUser.email,
+        password: loginUser.password
     }).then(result => {
         console.log(result)
         localStorage.setItem('token', result.token);
