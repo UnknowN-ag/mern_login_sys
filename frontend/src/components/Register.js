@@ -18,7 +18,7 @@ class Register extends Component {
             [e.target.name]: e.target.value
         })
     }
-    onSubmit(e) {
+    onSubmit(e) { 
         e.preventDefault();
         const user = {
             name: this.state.name,

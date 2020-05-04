@@ -8,6 +8,7 @@ export const register = (newUser) => {   //register function name and (parameter
     }).then(res => {
         console.log(res);
         console.log('User Registered Successfully');
+        return res;
     })
 }
 
